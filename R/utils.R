@@ -105,3 +105,4 @@ compare_proxy.glue <- function(x, path = "x") {
   class(x) <- NULL
   NextMethod("compare_proxy")
 }
+

@@ -18,20 +18,3 @@ eng_glue_sql <- function(options) {
   if (is.character(con)) {
     con <- get(con, envir = knitr::knit_global())
   }
-
-  if (is.null(con)) {
-    stop(
-      .call = FALSE,
-      "The 'connection' option (DBI connection) is required for glue_sql chunks."
-    )
-  }
-  glue_sql_options$.con <- con
-  options$code <- do.call(
-    glue_sql,
-    c(list(paste0(options$code, collapse = "\n")), glue_sql_options)
-  )
-  options$engine <- "sql"
-  knitr::knit_engines$get("sql")(options)
-}
-
-# nocov end

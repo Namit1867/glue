@@ -195,5 +195,3 @@ s3_register <- function(generic, class, method = NULL) {
 
   stop(sprintf("Internal error in rlang shims: Unknown function `%s()`.", fn))
 }
-
-# nocov end
